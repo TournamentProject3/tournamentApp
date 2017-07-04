@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "410264161564",
+    "firebase_url": "https://tournament-5e03a.firebaseio.com",
+    "project_id": "tournament-5e03a",
+    "storage_bucket": "tournament-5e03a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410264161564:android:732df3ce7ce72640",
+        "android_client_info": {
+          "package_name": "com.example.irem.tournament"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410264161564-vc0fbkbt1mdh0p0op9a3o23vq2vrfgj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.irem.tournament",
+            "certificate_hash": "9bb0b1ac57adcf11da307161335fafbde61bf528"
+          }
+        },
+        {
+          "client_id": "410264161564-v1gibov663uc7dsg0frnkc1i9b82l1j5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRxnqdsOjgm5Q_2fNSFAhUviBwZU4embQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410264161564-v1gibov663uc7dsg0frnkc1i9b82l1j5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
