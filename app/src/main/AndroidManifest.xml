@@ -21,6 +21,9 @@
             android:name=".Signup"/>
         <activity
             android:name=".TournamentModes"/>
+        <activity
+            android:name=".EliminationMode"/>
+
     </application>
 
 

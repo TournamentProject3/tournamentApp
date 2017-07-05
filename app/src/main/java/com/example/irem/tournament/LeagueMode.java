@@ -8,4 +8,6 @@ package com.example.irem.tournament;
 //Heyyy
     // HelloCEm from two left
 public class LeagueMode {
+
+
 }

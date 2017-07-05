@@ -22,7 +22,7 @@
         android:layout_marginRight="5dp">
 
         <Button
-            android:id="@+id/view6"
+            android:id="@+id/btn_eleminationMode"
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:background="@drawable/roundedbutton"

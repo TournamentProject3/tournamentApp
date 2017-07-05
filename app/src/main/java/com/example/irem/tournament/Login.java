@@ -35,10 +35,10 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     private EditText inputEmail, inputPassword;
-    private LoginButton loginButton;
-    private CallbackManager callbackManager;
+//    private LoginButton loginButton;
+ //   private CallbackManager callbackManager;
     private ProgressBar progressBar;
-    private Button btnSignup, btnLogin, btnReset;
+    private Button btnSignup, btnLogin, btnReset, btnFacebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
         // set the view now
         setContentView(R.layout.activity_login);
 
-        callbackManager = CallbackManager.Factory.create();
+   //     callbackManager = CallbackManager.Factory.create();
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -65,13 +65,14 @@ public class Login extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.btn_login);
+ //       btnFacebook = (Button) findViewById(R.id.btn_Facebook);
 
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-    
-     
+
+
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +102,7 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //authenticate user
-                auth.signInWithEmailAndPassword(email, password)
+ /*               auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -122,7 +123,10 @@ public class Login extends AppCompatActivity {
                                     finish();
                                 }
                             }
-                        });
+                        });*/
+                Intent intent = new Intent(Login.this, TournamentModes.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
