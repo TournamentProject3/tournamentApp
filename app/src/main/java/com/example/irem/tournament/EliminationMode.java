@@ -54,6 +54,15 @@ public class EliminationMode extends Activity {
             // save a reference to the textview for later
             myEditTextViews[i] = rowEditView;
             myEditTextViews[i].setVisibility(View.VISIBLE);
+
+            LinearLayout parent = new LinearLayout(getContext());
+            LayoutParams parentLayoutParams = new LinearLayout.LayoutParams(
+                    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            parent.setLayoutParams(parentLayoutParams);
+
+            outerlayout.addView(parent);
+
+
         }
     }
 }
