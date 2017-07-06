@@ -1,14 +1,13 @@
 package com.example.irem.tournament;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 
 /**
@@ -16,7 +15,9 @@ import android.widget.TextView;
  */
 
 public class EliminationMode extends Activity {
-    private EditText txtTournamentName,txtParticipantsNumber;
+
+
+    private EditText txtTournamentName, txtParticipantsNumber;
     private Button btnAddParticipants;
     private LinearLayout participantsLayout;
 
@@ -34,13 +35,19 @@ public class EliminationMode extends Activity {
         btnAddParticipants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Editable tournamentName = txtTournamentName.getText();
-                int participantsNumber = Integer.parseInt(txtParticipantsNumber.getText().toString());
-                createParticipants(participantsNumber);
+                //Editable tournamentName = txtTournamentName.getText();
+               // int participantsNumber = Integer.parseInt(txtParticipantsNumber.getText().toString());
+                Intent intent = new Intent(EliminationMode.this,recyclerView.class);
+                startActivity(intent);
+
+
+
+                //createParticipants(participantsNumber);
             }
         });
     }
-    public void createParticipants(int numOfParticipants){
+
+    /*public void createParticipants(int numOfParticipants) {
 
         final EditText[] myEditTextViews = new EditText[numOfParticipants]; // create an empty array;
 
@@ -51,18 +58,31 @@ public class EliminationMode extends Activity {
             rowEditView.setText("This is row #" + i);
             // add the textview to the linearlayout
             participantsLayout.addView(rowEditView);
+
             // save a reference to the textview for later
             myEditTextViews[i] = rowEditView;
             myEditTextViews[i].setVisibility(View.VISIBLE);
 
-            LinearLayout parent = new LinearLayout(getContext());
-            LayoutParams parentLayoutParams = new LinearLayout.LayoutParams(
-                    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            parent.setLayoutParams(parentLayoutParams);
+            ((ViewGroup)participantsLayout.getParent()).removeView(participantsLayout);
+            setContentView(participantsLayout);
 
-            outerlayout.addView(parent);
+
 
 
         }
+        class JavaLayoutActivity extends Activity {
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                Button myButton = new Button(this);
+                RelativeLayout myLayout = new RelativeLayout(this);
+                myLayout.addView(myButton);
+                setContentView(myLayout);
+
+            }
+        }*/
     }
-}
+
+
+

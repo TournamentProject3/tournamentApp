@@ -102,7 +102,7 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //authenticate user
- /*               auth.signInWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -123,7 +123,7 @@ public class Login extends AppCompatActivity {
                                     finish();
                                 }
                             }
-                        });*/
+                        });
                 Intent intent = new Intent(Login.this, TournamentModes.class);
                 startActivity(intent);
                 finish();

@@ -20,15 +20,6 @@
         <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\pre-dexed\debug\classes_81f19e3c694d68188c441e90da13a15f3007bb6a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_178da1ed23e5230f7e3861dee2b20ec881ab9e33\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\cemdeniz\.android\build-cache\2e0a7385f4fa54ef813cddaeb16fefd7d9c32cbb\output\jars\classes.jar"
         jumboMode="false"
@@ -308,15 +299,6 @@
         <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\pre-dexed\debug\classes_f2e98626c510a9950bd56df27627c2976eb422b3.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="6fa812dc95640d68934999e404df364ba1926fee">
-        <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_82e2e85dfc138953a727d7ee997abd2973f275d8\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\cemdeniz\.android\build-cache\d8442f1b71d0b8d4d97e6cbf705b448f02fc547b\output\jars\classes.jar"
         jumboMode="false"
@@ -396,6 +378,15 @@
         revision="26.0.0"
         sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
         <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\pre-dexed\debug\classes_93117c960a4f1ffdb1afcbd46eaa60fda173ec5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cemdeniz\.android\build-cache\ff158c41e44e8462e0ae0df5b18156ddb4450093\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\cemdeniz\Documents\tournamentApp\app\build\intermediates\pre-dexed\debug\classes_9c9747d487a5eae6740772f25037a446e9ff8d99.jar" />
     </item>
     <item
         is-multidex="false"
