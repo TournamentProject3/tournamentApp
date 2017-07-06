@@ -1,5 +1,5 @@
 package com.example.irem.tournament;
-//irem
+
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -27,11 +27,11 @@ package com.example.irem.tournament;
 public class Signup extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword,inputName,inputSurname;
-    private Button btnSignIn, btnSignUp,btnirem;
+    private Button btnSignIn, btnSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
-    //////////////////////////
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

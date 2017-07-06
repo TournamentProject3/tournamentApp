@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+
 
 
 /**
@@ -21,32 +26,39 @@ public class EliminationMode extends Activity {
     private Button btnAddParticipants;
     private LinearLayout participantsLayout;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminationmode);
 
+
+
+
         btnAddParticipants = (Button) findViewById(R.id.btnAdd);
+
         txtTournamentName = (EditText) findViewById(R.id.edtTextTournamentName);
         txtParticipantsNumber = (EditText) findViewById(R.id.edtTextCount);
         participantsLayout = (LinearLayout) findViewById(R.id.linearlayout);
+
 
         btnAddParticipants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Editable tournamentName = txtTournamentName.getText();
                 //int participantsNumber = Integer.parseInt(txtParticipantsNumber.getText().toString());
-                Intent intent = new Intent(EliminationMode.this,recyclerView.class);
-                intent.putExtra("count",txtParticipantsNumber.getText().toString());
+                Intent intent = new Intent(EliminationMode.this, recyclerView.class);
+                intent.putExtra("count", txtParticipantsNumber.getText().toString());
                 startActivity(intent);
-
 
 
                 //createParticipants(participantsNumber);
             }
         });
-    }
+
+
 
     /*public void createParticipants(int numOfParticipants) {
 
@@ -84,6 +96,7 @@ public class EliminationMode extends Activity {
             }
         }*/
     }
+}
 
 
 

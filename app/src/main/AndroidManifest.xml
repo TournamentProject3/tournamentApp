@@ -24,7 +24,8 @@
         <activity android:name=".TournamentModes" />
         <activity android:name=".EliminationMode" />
         <activity android:name=".recyclerView" />
-        <activity android:name=".ListItem" />
+        <activity android:name=".ResultElimination" />
+
 
 
     </application>

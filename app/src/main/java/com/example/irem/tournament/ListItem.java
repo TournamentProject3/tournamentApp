@@ -11,6 +11,15 @@ public class ListItem {
 
     private String head;
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    private String desc;
     public ListItem(String s){
         this.head=s;
     }
