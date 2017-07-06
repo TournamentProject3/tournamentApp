@@ -48,6 +48,8 @@ public class recyclerView extends AppCompatActivity {
 
         //loadRecyclerViewData();
 
+        //recycle loop
+
         for(int i = 0; i<partipicantCountNumber; i++) {
 
             ListItem listItem = new ListItem(
