@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
@@ -32,36 +33,36 @@ public class recyclerView extends AppCompatActivity {
     private Adapter adapter;
 
     private List<ListItem> listItems;
-
+    private int partipicantCountNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle_view);
-
+        partipicantCountNumber = Integer.parseInt(getIntent().getStringExtra("count"));
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listItems = new ArrayList<>();
 
         //loadRecyclerViewData();
 
-        for(int i = 0; i<=5; i++){
+        for(int i = 0; i<partipicantCountNumber; i++) {
 
             ListItem listItem = new ListItem(
-
-            
-
+                    "Katılımcı İsmi: "
             );
 
-            listItems.add(listItem);
+
+                listItems.add(listItem);
         }
         adapter = new Adapter(listItems,this);
         recyclerView.setAdapter(adapter);
 
     }
 
-    /*private void loadRecyclerViewData() {
+   /* private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading data...");
         progressDialog.show();
@@ -103,8 +104,7 @@ public class recyclerView extends AppCompatActivity {
         });
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        requestQueue.add(stringRequest);*/
 
-    }*/
+   }
 
-}

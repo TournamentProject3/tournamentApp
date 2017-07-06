@@ -37,7 +37,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         ListItem listItem = listItems.get(position);
 
         holder.textViewHead.setText(listItem.getHead());
-        holder.textViewDesc.setText(listItem.getDesc());
+
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             super(itemView);
 
             textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
-            textViewDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
+
         }
     }
 }

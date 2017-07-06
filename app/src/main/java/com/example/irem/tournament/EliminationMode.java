@@ -36,8 +36,9 @@ public class EliminationMode extends Activity {
             @Override
             public void onClick(View v) {
                 //Editable tournamentName = txtTournamentName.getText();
-               // int participantsNumber = Integer.parseInt(txtParticipantsNumber.getText().toString());
+                //int participantsNumber = Integer.parseInt(txtParticipantsNumber.getText().toString());
                 Intent intent = new Intent(EliminationMode.this,recyclerView.class);
+                intent.putExtra("count",txtParticipantsNumber.getText().toString());
                 startActivity(intent);
 
 

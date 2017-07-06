@@ -10,20 +10,18 @@ public class ListItem {
 
 
     private String head;
-    private String desc;
 
-    public ListItem(){
-        this.head=head;
-        this.desc=desc;
+    public ListItem(String s){
+        this.head=s;
+    }
+
+    public ListItem() {
     }
 
     public String getHead(){
         return head;
     }
 
-    public String getDesc(){
-        return desc;
-    }
 
 
 
