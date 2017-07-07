@@ -25,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.credentials.HintRequest;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
@@ -46,7 +47,7 @@ public class recyclerView extends AppCompatActivity {
 
     private List<ListItem> listItems;
     private int partipicantCountNumber;
-    List<String> names= new ArrayList<>();
+    private List<String> names;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,21 +71,13 @@ public class recyclerView extends AppCompatActivity {
         }*/
 
 
-
-       /* if(partipicantCountNumber){
-
-        }*/
-
-
-        //
-
         //recycle loop
 
         for (int i = 0; i < partipicantCountNumber; i++) {
 
-            ListItem listItem = new ListItem(
-                    "Katılımcı İsmi: "
-            );
+                ListItem listItem = new ListItem(
+                        "Katılımcı İsmi: "
+                );
 
 
             listItems.add(listItem);
@@ -107,12 +100,17 @@ public class recyclerView extends AppCompatActivity {
                     DatabaseReference dbRefNew = db.getReference("Participant/" + key);
                     dbRefNew.setValue(new Participant(str));
 
-                    names.add(str);
 
-                    startActivity(new Intent(recyclerView.this, ResultElimination.class));
+
+
 
                 }
                // loadRecyclerViewData();
+                Intent intent = new Intent(recyclerView.this,ResultElimination.class);
+                Gson gson = new Gson();
+                String gSonString = gson.toJson(adapter.listItems);
+                intent.putExtra("list",gSonString);
+                startActivity(intent);
 
             }
 
