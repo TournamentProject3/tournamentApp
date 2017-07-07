@@ -10,6 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 public class ResultElimination extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_result_el);
     }
 }

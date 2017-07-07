@@ -45,6 +45,7 @@ public class recyclerView extends AppCompatActivity {
 
     private List<ListItem> listItems;
     private int partipicantCountNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,59 +75,48 @@ public class recyclerView extends AppCompatActivity {
         }*/
 
 
-
-
-        //loadRecyclerViewData();
+        //
 
         //recycle loop
 
-        for(int i = 0; i<partipicantCountNumber; i++) {
+        for (int i = 0; i < partipicantCountNumber; i++) {
 
             ListItem listItem = new ListItem(
                     "Katılımcı İsmi: "
             );
 
 
-                listItems.add(listItem);
+            listItems.add(listItem);
         }
-        adapter = new Adapter(listItems,this);
+        adapter = new Adapter(listItems, this);
         recyclerView.setAdapter(adapter);
 
 
         btnCastLots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(int i=0;i<adapter.getItemCount();i++){
+                for (int i = 0; i < adapter.getItemCount(); i++) {
                     String str = adapter.listItems.get(i).getDesc();
-                    Log.d("Edittext Data:",str);
+                    Log.d("Edittext Data:", str);
+                    if (TextUtils.isEmpty(str)) {
+                        Toast.makeText(getApplicationContext(), "Enter participant name!", Toast.LENGTH_SHORT).show();
+                    }
+                    DatabaseReference dbRef = db.getReference("Participant");
+                    String key = dbRef.push().getKey();//kayıtların üst üste yazılmaması için
+                    DatabaseReference dbRefNew = db.getReference("Participant/" + key);
+                    dbRefNew.setValue(new Participant(str));
+                    startActivity(new Intent(recyclerView.this, ResultElimination.class));
 
                 }
-                /*if (TextUtils.isEmpty(textViewDesc)) {
-                    Toast.makeText(getApplicationContext(), "Enter participant name!", Toast.LENGTH_SHORT).show();
-                }*/
-
-
-                //addParticipant(participant);
-             //   startActivity(new Intent(recyclerView.this, ResultElimination.class));
+                loadRecyclerViewData();
 
             }
-
-           /* private void addParticipant(String name) {
-                DatabaseReference dbRef = db.getReference("Participant");
-                String key = dbRef.push().getKey();//kayıtların üst üste yazılmaması için
-                DatabaseReference dbRefNew = db.getReference("Participant/" + key);
-                dbRefNew.setValue(new Participant(name));
-
-            }
-            */
 
 
         });
-
     }
 
-
-   /* private void loadRecyclerViewData() {
+    private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading data...");
         progressDialog.show();
@@ -139,17 +129,18 @@ public class recyclerView extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("client_info");
+                            JSONArray array = jsonObject.getJSONArray("Participant");
 
-                            for (int i = 0; i<array.length(); i++){
+                            for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
-                                ListItem item = new ListItem(
-                                        o.getString("client_info")
-                                );
+                                ListItem item = new ListItem(o.getString("Participant"));
+                                //String item1 = adapter.listItems.get(i).getDesc();
+                                Log.d("Edittext Data:", String.valueOf(item));
 
                                 listItems.add(item);
+
                             }
-                            adapter = new Adapter(listItems,getApplicationContext());
+                            adapter = new Adapter(listItems, getApplicationContext());
                             recyclerView.setAdapter(adapter);
 
                         } catch (JSONException e) {
@@ -159,16 +150,23 @@ public class recyclerView extends AppCompatActivity {
 
                     }
                 },
-                new Response.ErrorListener(){
-                        @Override
-                        public void onErrorResponse (VolleyError volleyError){
-                            progressDialog.dismiss();
-                           Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-        });
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);*/
+        requestQueue.add(stringRequest);
 
-   }
+
+    }
+}
+
+
+
+
+
 
