@@ -40,6 +40,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         final ListItem listItem = listItems.get(position);
 
         holder.textViewHead.setText(listItem.getHead());
+        holder.editTextListener.updatePosition(holder.getAdapterPosition());
        holder.textViewDesc.setText(listItems.get(holder.getAdapterPosition()).getDesc());
     }
 

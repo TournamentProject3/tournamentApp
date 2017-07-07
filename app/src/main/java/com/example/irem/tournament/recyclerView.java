@@ -63,9 +63,9 @@ public class recyclerView extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         listItems = new ArrayList<>();
-        if (4>partipicantCountNumber || partipicantCountNumber>64  ){
+        /*if (4>partipicantCountNumber || partipicantCountNumber>64  ){
             Toast.makeText(getApplicationContext(), "Please enter value between 4 and 64!", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
 
 
@@ -97,19 +97,21 @@ public class recyclerView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 for(int i=0;i<adapter.getItemCount();i++){
-                    String str = adapter.listItems.get(i).getHead();
+                    String str = adapter.listItems.get(i).getDesc();
                     Log.d("Edittext Data:",str);
-                }
 
-                //if (TextUtils.isEmpty(participant)) {
-                 //   Toast.makeText(getApplicationContext(), "Enter participant name!", Toast.LENGTH_SHORT).show();
-               // }
-                //addRegist(participant);
+                }
+                /*if (TextUtils.isEmpty(textViewDesc)) {
+                    Toast.makeText(getApplicationContext(), "Enter participant name!", Toast.LENGTH_SHORT).show();
+                }*/
+
+
+                //addParticipant(participant);
              //   startActivity(new Intent(recyclerView.this, ResultElimination.class));
 
             }
 
-           /* private void addRegist(String name) {
+           /* private void addParticipant(String name) {
                 DatabaseReference dbRef = db.getReference("Participant");
                 String key = dbRef.push().getKey();//kayıtların üst üste yazılmaması için
                 DatabaseReference dbRefNew = db.getReference("Participant/" + key);
