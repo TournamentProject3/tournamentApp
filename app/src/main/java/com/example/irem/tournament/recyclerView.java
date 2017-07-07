@@ -1,6 +1,7 @@
 package com.example.irem.tournament;
 
 import android.app.Activity;
+import android.app.LauncherActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +46,7 @@ public class recyclerView extends AppCompatActivity {
 
     private List<ListItem> listItems;
     private int partipicantCountNumber;
-
+    List<String> names= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,10 +106,13 @@ public class recyclerView extends AppCompatActivity {
                     String key = dbRef.push().getKey();//kayıtların üst üste yazılmaması için
                     DatabaseReference dbRefNew = db.getReference("Participant/" + key);
                     dbRefNew.setValue(new Participant(str));
+
+                    names.add(str);
+
                     startActivity(new Intent(recyclerView.this, ResultElimination.class));
 
                 }
-                loadRecyclerViewData();
+               // loadRecyclerViewData();
 
             }
 
@@ -116,7 +120,7 @@ public class recyclerView extends AppCompatActivity {
         });
     }
 
-    private void loadRecyclerViewData() {
+   /* private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading data...");
         progressDialog.show();
@@ -162,7 +166,7 @@ public class recyclerView extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
 
-    }
+    }*/
 }
 
 
