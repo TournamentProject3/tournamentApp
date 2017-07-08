@@ -30,7 +30,10 @@
             android:id="@+id/btn_castLots"
             android:layout_width="126dp"
             android:layout_height="wrap_content"
-            android:text="Contiune" />
+            android:text="Cast Lots"
+            android:textColor="@android:color/black"
+            android:background="@color/bg_main"
+            android:layout_marginTop="100dp"/>
 
     </LinearLayout>
 

@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="20dp">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.irem.tournament.TournamentModes">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/btn_login_bg"
 
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtViewTournamentInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_info"
@@ -26,13 +35,14 @@
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:background="@drawable/roundedbutton"
-            android:text="@string/elm_info"/>
+            android:text="Elimination Mode"/>
 
         <Button
-            android:id="@+id/view7"
+            android:id="@+id/btn_groupMode"
             android:layout_width="160dp"
             android:layout_height="match_parent"
-            android:background="@drawable/roundedbutton1" />
+            android:background="@drawable/roundedbutton1"
+            android:text="Group Mode"/>
 
 
     </LinearLayout>
@@ -46,19 +56,40 @@
         android:layout_marginRight="5dp">
 
         <Button
-            android:id="@+id/view8"
+            android:id="@+id/btn_ligMode"
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:background="@drawable/roundedbutton2"
-            android:text="@string/elm_info"/>
+            android:text="Lig Mode"/>
 
         <Button
-            android:id="@+id/view9"
+            android:id="@+id/btn_realMode"
             android:layout_width="160dp"
             android:layout_height="match_parent"
-            android:background="@drawable/roundedbutton3" />
+            android:background="@drawable/roundedbutton3"
+            android:text="Real Torunamnet Mode"/>
 
 
     </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+           android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btn_modesInfo"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/black"
+                android:background="@color/bg_main"
+                android:text="Information about the modes"/>
+
+
+
+        </LinearLayout>
+
 </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

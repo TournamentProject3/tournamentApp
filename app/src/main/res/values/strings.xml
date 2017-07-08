@@ -9,10 +9,14 @@
   this application comes into effect.This app will prepare
   you a fixture based on the selected tournament format.
   All you need to do is to add the names of the participants.</string>
-    <string name="elm_info">
-        Defeated participants ar eliminated and winners continue.
+    <string name="elm_info">Elimination mode:Defeated participants ar eliminated and winners continue.
     The tournament fixture is prepared until the last two
      participants.(until the semi-final)</string>
+    <string name="group_info">Group mode:</string>
+    <string name="lig_info">Lig mode:In this mode all participants are in one league and all meet each other.
+      Customize by double or single match according to your wishes.</string>
+    <string name="real_info">Real Tournament mode:If you have any tournaments currently being played, check with all participants.
+       Champions League, World Cup Qualification ...</string>
     <string name="error_login">error</string>
     <string name="cancel_login">cancel</string>
 
@@ -44,6 +48,5 @@
     <string name="btn_send">Send</string>
     <string name="btn_remove">Remove</string>
     <string name="btn_sign_out">Sign Out</string>
-    <string name="lbl_forgot_password">Forgot password?</string>
-    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+   <string name="btn_add">Add the Participants</string>
 </resources>

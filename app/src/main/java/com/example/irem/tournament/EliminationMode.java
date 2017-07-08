@@ -41,7 +41,7 @@ public class EliminationMode extends Activity {
 
         txtTournamentName = (EditText) findViewById(R.id.edtTextTournamentName);
         txtParticipantsNumber = (EditText) findViewById(R.id.edtTextCount);
-        participantsLayout = (LinearLayout) findViewById(R.id.linearlayout);
+       // participantsLayout = (LinearLayout) findViewById(R.id.linearlayout);
 
 
         btnAddParticipants.setOnClickListener(new View.OnClickListener() {

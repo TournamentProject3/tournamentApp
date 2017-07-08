@@ -25,6 +25,7 @@
         <activity android:name=".EliminationMode" />
         <activity android:name=".recyclerView" />
         <activity android:name=".ResultElimination" />
+        <activity android:name=".InfoModes"/>
 
 
 
