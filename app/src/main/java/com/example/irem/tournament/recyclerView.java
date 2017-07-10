@@ -88,11 +88,7 @@ public class recyclerView extends AppCompatActivity {
                     dbRefNew.setValue(new Participant(str));
 
 
-
-
-
                 }
-               // loadRecyclerViewData();
                 Intent intent = new Intent(recyclerView.this,ResultElimination.class);
                 Gson gson = new Gson();
                 String gSonString = gson.toJson(adapter.listItems);
@@ -105,53 +101,7 @@ public class recyclerView extends AppCompatActivity {
         });
     }
 
-   /* private void loadRecyclerViewData() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading data...");
-        progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                URL_DATA,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-                        progressDialog.dismiss();
-                        try {
-                            JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("Participant");
-
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject o = array.getJSONObject(i);
-                                ListItem item = new ListItem(o.getString("Participant"));
-                                //String item1 = adapter.listItems.get(i).getDesc();
-                                Log.d("Edittext Data:", String.valueOf(item));
-
-                                listItems.add(item);
-
-                            }
-                            adapter = new Adapter(listItems, getApplicationContext());
-                            recyclerView.setAdapter(adapter);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-
-
-    }*/
 }
 
 

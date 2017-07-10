@@ -2,16 +2,15 @@ package com.example.irem.tournament;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by irem on 6.07.2017.
@@ -21,28 +20,75 @@ import java.util.List;
 public class ResultElimination extends AppCompatActivity{
 
     private TextView inputName;
+    List<ListItem> listItems;
     private String eliminationResult;
+    Random randomizer = new Random();
+    ListItem randomItem;
+    String random;
+    int randomMatchNumber;
+
+
+    private int myLog(int x, int base)
+    {
+        return (int) (Math.log(x) / Math.log(base));
+    }
+
+    public void matchParticipants(int participantNumber, int matchNumber){
+
+        ArrayList<String> randoms = new ArrayList<String>();
+        ArrayList<ListItem> matcheds = new ArrayList<ListItem>();
+
+        for(int i=0; i<matchNumber; i++){
+            randomItem = listItems.get(randomizer.nextInt(listItems.size()));
+            random = randomItem.getDesc();
+            randoms.add(random);
+            listItems.remove(randomItem);
+            if(!random.equals(listItems.get(i).getDesc())) {
+                inputName.setText(inputName.getText() + "" + (i + 1) + ". Match is :" + listItems.get(i).getDesc() + " vs " + random + "\n");
+                matcheds.add(listItems.get(i));
+            }
+            //listItems.remove(listItems.get(i).getDesc());
+            //inputName.setText(inputName.getText() +". "+ (i + 1) +random+ " vs "+ "\n");
+        }
+
+
+      /* if(listItems != null && listItems.size() > 0){
+            for(int i=0; i<listItems.size(); i++){
+                if(!randoms.contains(listItems.get(i).getDesc()) && !matcheds.contains(listItems.get(i).getDesc())){
+                    inputName.setText(inputName.getText() + "" + (i + 1+randomMatchNumber) + ". Match is :" + listItems.get(i).getDesc() + "- \n" );
+
+                }
+
+            }
+        }*/
+
+
+
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_el);
-            eliminationResult = getIntent().getStringExtra("list");
+        eliminationResult = getIntent().getStringExtra("list");
         Gson gson = new Gson();
         Type type = new TypeToken<List<ListItem>>(){}.getType();
-        List<ListItem> listItems = gson.fromJson(eliminationResult,type);
+        listItems = gson.fromJson(eliminationResult,type);
         inputName=(TextView) findViewById(R.id.regists);
         recyclerView recycler=new recyclerView();
-        /*StringBuilder builder = new StringBuilder();
-        for (String details : names) {
-            builder.append(details + "\n");
+
+
+
+        if(listItems.size()>0){
+            int a = myLog(listItems.size(), 2);
+            randomMatchNumber = (int) (listItems.size() - (Math.pow(2,a)));
         }
 
-        inputName.setText(builder.toString());*/
+        if(randomMatchNumber==0){
+            randomMatchNumber = listItems.size()/2;
+        }
 
 
-      for(int i=0;i<listItems.size(); i++)
-           //Toast.makeText(this, names.get(i), Toast.LENGTH_LONG).show();
-       inputName.setText(inputName.getText()+""+listItems.get(i).getDesc()+"");
+        matchParticipants(listItems.size(), randomMatchNumber);
 
 
 
