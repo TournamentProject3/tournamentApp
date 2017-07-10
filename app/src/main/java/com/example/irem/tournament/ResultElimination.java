@@ -36,31 +36,38 @@ public class ResultElimination extends AppCompatActivity{
     public void matchParticipants(int participantNumber, int matchNumber){
 
         ArrayList<String> randoms = new ArrayList<String>();
-        ArrayList<ListItem> matcheds = new ArrayList<ListItem>();
+        ArrayList<String> remains = new ArrayList<>();
+        ArrayList<String> matched = new ArrayList<>();
 
         for(int i=0; i<matchNumber; i++){
             randomItem = listItems.get(randomizer.nextInt(listItems.size()));
             random = randomItem.getDesc();
             randoms.add(random);
             listItems.remove(randomItem);
-            if(!random.equals(listItems.get(i).getDesc())) {
+            /*if(!random.equals(listItems.get(i).getDesc())) {
                 inputName.setText(inputName.getText() + "" + (i + 1) + ". Match is :" + listItems.get(i).getDesc() + " vs " + random + "\n");
-                matcheds.add(listItems.get(i));
+
             }
-            //listItems.remove(listItems.get(i).getDesc());
-            //inputName.setText(inputName.getText() +". "+ (i + 1) +random+ " vs "+ "\n");
+            listItems.remove(matcheds.get(i));
+            listItems.remove(listItems.get(i).getDesc());*/
+            //inputName.setText(inputName.getText() +""+ (i + 1)+". " +random+ " vs "+ "\n");
+        }
+        for(int i=0; i<randoms.size(); i++){
+            matched.add(listItems.get(i).getDesc());
+            inputName.setText(inputName.getText() +""+ (i + 1)+". Match is :  " + matched.get(i)+ " vs "+randoms.get(i)+ "\n");
+
+        }
+        for(int i=0; i<listItems.size(); i++){
+            remains.add(listItems.get(i).getDesc());
+        }
+
+        for (int i=0; i<remains.size(); i++ ){
+            if(!matched.contains(remains.get(i))){
+            inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + remains.get(i) + " vs  - \n" );
+            }
         }
 
 
-      /* if(listItems != null && listItems.size() > 0){
-            for(int i=0; i<listItems.size(); i++){
-                if(!randoms.contains(listItems.get(i).getDesc()) && !matcheds.contains(listItems.get(i).getDesc())){
-                    inputName.setText(inputName.getText() + "" + (i + 1+randomMatchNumber) + ". Match is :" + listItems.get(i).getDesc() + "- \n" );
-
-                }
-
-            }
-        }*/
 
 
 
