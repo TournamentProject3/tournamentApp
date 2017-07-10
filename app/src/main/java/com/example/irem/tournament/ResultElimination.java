@@ -44,13 +44,7 @@ public class ResultElimination extends AppCompatActivity{
             random = randomItem.getDesc();
             randoms.add(random);
             listItems.remove(randomItem);
-            /*if(!random.equals(listItems.get(i).getDesc())) {
-                inputName.setText(inputName.getText() + "" + (i + 1) + ". Match is :" + listItems.get(i).getDesc() + " vs " + random + "\n");
 
-            }
-            listItems.remove(matcheds.get(i));
-            listItems.remove(listItems.get(i).getDesc());*/
-            //inputName.setText(inputName.getText() +""+ (i + 1)+". " +random+ " vs "+ "\n");
         }
         for(int i=0; i<randoms.size(); i++){
             matched.add(listItems.get(i).getDesc());
@@ -65,7 +59,18 @@ public class ResultElimination extends AppCompatActivity{
             if(!matched.contains(remains.get(i))){
             inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + remains.get(i) + " vs  - \n" );
             }
+
         }
+
+        inputName.setText(inputName.getText() + "\n---- Sonraki tur ----" +"\n" );
+
+        int tmp=remains.size();
+        for(int i=0; i<remains.size()/2; i++){
+            tmp--;
+            inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + /*remains.get(i)*/ (i+1)+ ".Maç kazananı vs  "+ (tmp +1) + ".Maçın kazananı"+"\n" );
+
+        }
+
 
 
 
