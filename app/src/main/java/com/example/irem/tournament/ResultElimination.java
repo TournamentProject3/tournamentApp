@@ -49,27 +49,29 @@ public class ResultElimination extends AppCompatActivity{
         for(int i=0; i<randoms.size(); i++){
             matched.add(listItems.get(i).getDesc());
             inputName.setText(inputName.getText() +""+ (i + 1)+". Match is :  " + matched.get(i)+ " vs "+randoms.get(i)+ "\n");
-
         }
         for(int i=0; i<listItems.size(); i++){
             remains.add(listItems.get(i).getDesc());
         }
-
         for (int i=0; i<remains.size(); i++ ){
             if(!matched.contains(remains.get(i))){
             inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + remains.get(i) + " vs  - \n" );
             }
+        }
 
+        for(int i=0; i<matched.size(); i++){
+            remains.remove(matched.get(i));
         }
 
         inputName.setText(inputName.getText() + "\n---- Sonraki tur ----" +"\n" );
 
-        int tmp=remains.size();
-        for(int i=0; i<remains.size()/2; i++){
-            tmp--;
-            inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + /*remains.get(i)*/ (i+1)+ ".Maç kazananı vs  "+ (tmp +1) + ".Maçın kazananı"+"\n" );
+
+        for(int i=0; i<(randoms.size()+remains.size())/2; i++){
+            inputName.setText(inputName.getText() + "" + (i+1) + ". Match is :  " + (i+1)+ ".Maç kazananı vs  "+ (i+2) + ".Maçın kazananı"+"\n" );
 
         }
+
+
 
 
 
