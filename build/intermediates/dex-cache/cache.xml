@@ -3,21 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Suleyman\Documents\tournamentApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\irem\.android\build-cache\34a086aefd29482c01845fd1148fbe0467d23bb0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_59f319bbed2ff4d555e5ff6ac3aa07890f22cd7f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Suleyman\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_78cc1ab9bbd95bda18b18d1fe782729a01bc5544\classes.dex" />
+        <dex dex="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ea5a81383ad1d02492f77646f19b1963a3f4967b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Suleyman\Documents\tournamentApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\irem\.android\build-cache\99b0422313d743849498483dde7f53652adbc051\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="4122653af55951f32662ab77c72ec184781b3134">
-        <dex dex="C:\Users\Suleyman\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_eb10d2b2802ea3779c930bfee33868b8f7472e90\classes.dex" />
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9954a1205ab89447bb6a0d3eab93f4d7c2dd3144\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2465ba1e0d448d826d68216f39f1890678eb13b5">
+        <dex dex="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_94112a0e5a44f134e2aa80e1c4ccbfe4d50fdd59\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\irem\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\irem\Documents\tournamentApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_6c7110a370c86bf98b73e8b07e987fc02cd3e9b5\classes.dex" />
     </item>
 
 </items>

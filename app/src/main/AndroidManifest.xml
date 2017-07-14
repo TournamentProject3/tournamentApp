@@ -26,6 +26,8 @@
         <activity android:name=".recyclerView" />
         <activity android:name=".ResultElimination" />
         <activity android:name=".InfoModes"/>
+        <activity android:name=".GroupMode"/>
+        <activity android:name=".ResultGroup"/>
 
 
 

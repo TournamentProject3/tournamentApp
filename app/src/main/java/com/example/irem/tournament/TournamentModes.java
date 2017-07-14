@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class TournamentModes extends AppCompatActivity {
 
-    private Button btnElem,btnInfo;
+    private Button btnElem,btnInfo,btnGroup;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +18,20 @@ public class TournamentModes extends AppCompatActivity {
 
         btnElem = (Button) findViewById(R.id.btn_eleminationMode);
         btnInfo=(Button)findViewById(R.id.btn_modesInfo);
+        btnGroup =(Button)findViewById(R.id.btn_groupMode);
 
         btnElem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TournamentModes.this, EliminationMode.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        btnGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TournamentModes.this, GroupMode.class);
                 startActivity(intent);
                 finish();
             }

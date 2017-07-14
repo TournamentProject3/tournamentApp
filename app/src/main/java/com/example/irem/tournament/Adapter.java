@@ -41,7 +41,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         holder.textViewHead.setText(listItem.getHead());
         holder.editTextListener.updatePosition(holder.getAdapterPosition());
-       holder.textViewDesc.setText(listItems.get(holder.getAdapterPosition()).getDesc());
+        holder.textViewDesc.setText(listItems.get(holder.getAdapterPosition()).getDesc());
     }
 
     @Override

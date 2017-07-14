@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 
@@ -34,7 +35,10 @@ public class recyclerView extends AppCompatActivity {
 
     private List<ListItem> listItems;
     private int partipicantCountNumber;
+    private String groupCountNumber;
+    private Boolean radioButtonSingle;
     private List<String> names;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,9 @@ public class recyclerView extends AppCompatActivity {
 
 
         partipicantCountNumber = Integer.parseInt(getIntent().getStringExtra("count"));
+        groupCountNumber = getIntent().getStringExtra("countGroup");
+        radioButtonSingle =  getIntent().getBooleanExtra("radioSingle",true);
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -53,13 +60,8 @@ public class recyclerView extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         listItems = new ArrayList<>();
-        /*if (4>partipicantCountNumber || partipicantCountNumber>64  ){
-            Toast.makeText(getApplicationContext(), "Please enter value between 4 and 64!", Toast.LENGTH_SHORT).show();
-        }*/
-
 
         //recycle loop
-
         for (int i = 0; i < partipicantCountNumber; i++) {
 
                 ListItem listItem = new ListItem(
@@ -89,11 +91,23 @@ public class recyclerView extends AppCompatActivity {
 
 
                 }
-                Intent intent = new Intent(recyclerView.this,ResultElimination.class);
-                Gson gson = new Gson();
-                String gSonString = gson.toJson(adapter.listItems);
-                intent.putExtra("list",gSonString);
-                startActivity(intent);
+                /*
+                    Intent intent = new Intent(recyclerView.this, ResultElimination.class);
+                    Gson gson = new Gson();
+                    String gSonString = gson.toJson(adapter.listItems);
+                    intent.putExtra("list", gSonString);
+                    startActivity(intent);
+                */
+                    Intent intent = new Intent(recyclerView.this, ResultGroup.class);
+                    Gson gson = new Gson();
+                    String gSonString = gson.toJson(adapter.listItems);
+                    intent.putExtra("listGroup", gSonString);
+                    intent.putExtra("countGroup", groupCountNumber);
+                    intent.putExtra("count", partipicantCountNumber);
+                    intent.putExtra("radioSingle",radioButtonSingle);
+
+                    startActivity(intent);
+
 
             }
 
